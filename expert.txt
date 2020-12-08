@@ -1,0 +1,9 @@
+Lion
+Elephant
+is Predator?
+Bird
+Frog
+Sneak
+Amphibian?
+Can Fly?
+is Mammal?
