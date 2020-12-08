@@ -1,0 +1,17 @@
+#include"BinLinkList.h"
+int main(){
+    BinNode<int>* root ,*l,*r;
+    BinTree<int> test(2);
+    root=test.GetRoot();
+    test.InsertLeftChild(root,5);
+    test.InsertRightChild(root,4);
+    l = test.GetLeftChild(root);
+    test.InsertRightChild(l,10);
+    std::cout<<"PreOrder:"<<std::endl;
+    test.PreOrder();
+    std::cout<<"InOrder:"<<std::endl;
+    test.InOrder();
+    std::cout<<"PostOrder:"<<std::endl;
+    test.PostOrder();
+    return 0;
+}
