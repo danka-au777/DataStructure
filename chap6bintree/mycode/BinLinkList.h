@@ -40,6 +40,7 @@ class BinTree{
     BinNode<ElemType>* GetRightChild(BinNode<ElemType>*cur){
         return cur->right;
     }
+
     void InOrderHandle(BinNode<ElemType> *cur);
     void PostOrderHandle(BinNode<ElemType> *cur);
     void PreOrder();//non-recursive
@@ -51,7 +52,28 @@ class BinTree{
         PostOrderHandle(root);
         std::cout<<std::endl;
     }
+    void InOrderNon();//non-recursive
 };
+
+template<class ElemType>
+void BinTree<ElemType>::InOrderNon(){
+    std::stack<BinNode<ElemType>*> stk;
+    BinNode<ElemType>* p =root;
+    while (p!=NULL || !stk.empty())
+    {
+        if(p!=NULL){
+            stk.push(p);
+            p=p->left;
+        }
+        else
+        {
+            p=stk.top();
+            stk.pop();
+            std::cout<<p->data<<" ";
+            p=p->right;
+        }  
+    }  
+}
 
 template<class ElemType>
 void BinTree<ElemType>::PostOrderHandle(BinNode<ElemType> *cur){
